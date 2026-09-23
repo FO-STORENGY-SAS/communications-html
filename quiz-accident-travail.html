@@ -256,7 +256,7 @@ function fin(){
     <p class="sous">${RANGS[rg].t}${nouveau?" <b>Nouveau record !</b>":rec?` Votre record : ${rec} points.`:""}</p>
     <div class="bilan"><div><b>${jeu.bons}/${N}</b><span>bonnes réponses</span></div><div><b>${jeu.best}</b><span>meilleure série</span></div><div><b>${pct} %</b><span>du score maximum</span></div></div>
     <div class="echelle">${RANGS.map((r,k)=>`<span class="${k===rg?"moi":""}">${r.n}</span>`).join("")}</div>
-    <div class="actions"><button class="btn go" id="rejouer">Rejouer</button><a class="lien" href="https://claude.ai/artifact/GfSk4dzeUeRk7x4S3HzLcP" target="_blank" rel="noopener">Faire le diagnostic de ma situation →</a></div></div>`;
+    <div class="actions"><button class="btn go" id="rejouer">Rejouer</button><a class="lien" href="diagnostic-accident-travail.html">Faire le diagnostic de ma situation →</a></div></div>`;
   $("rejouer").onclick=start;
 }
 accueil();

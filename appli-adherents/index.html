@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FO Energie Storengy – Infos adhérents</title>
+<meta name="theme-color" content="#e73640">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="logo-fo.png">
+<link rel="icon" href="logo-fo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --rouge:#e73640; --bleu:#15a5b9; --vert:#2aa98c; --fond:#f5f7f7; --texte:#1f2a30; --gris:#5f6b72; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Nunito", system-ui, sans-serif; background:var(--fond); color:var(--texte); min-height:100vh; display:flex; flex-direction:column; }
+  h1, h2, .slogan, .num, .accroche { font-family:"Baloo 2", "Nunito", sans-serif; }
+
+  header { background:#fff; padding:36px 16px 0; text-align:center; }
+  .logo { height:110px; }
+  .bienvenue { font-family:"Baloo 2","Nunito",sans-serif; font-weight:800; font-size:26px; color:var(--texte); margin-top:14px; padding-bottom:22px; }
+  .section { margin-top:4px; font-weight:700; color:var(--bleu); font-size:15px; letter-spacing:.3px; }
+
+  .bandeau { position:relative; max-width:560px; margin:18px auto 0; padding:0 16px; }
+  .bandeau img { width:100%; aspect-ratio:515/215; object-fit:cover; border-radius:18px; display:block; }
+  .slogan { position:absolute; top:10px; right:26px; background:var(--rouge); color:#fff; font-weight:800; font-size:15px; padding:4px 14px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,.2); }
+  .accroche { position:absolute; bottom:10px; left:26px; background:var(--vert); color:#fff; font-weight:800; font-size:14px; line-height:1.1; padding:6px 14px; border-radius:10px; clip-path:polygon(0 0, 100% 0, 92% 100%, 0 100%); padding-right:24px; }
+
+  main { width:100%; max-width:560px; margin:24px auto 0; padding:0 16px 32px; flex:1; display:flex; flex-direction:column; gap:14px; }
+  .titre-liste { font-family:"Baloo 2", sans-serif; font-weight:800; font-size:20px; color:var(--texte); }
+  .titre-liste span { color:var(--rouge); }
+  .carte { display:flex; align-items:center; gap:14px; background:#fff; border-radius:18px; padding:16px; text-decoration:none; color:inherit; box-shadow:0 2px 10px rgba(0,0,0,.06); border-left:6px solid var(--rouge); transition:transform .15s; }
+  .carte.b { border-left-color:var(--bleu); }
+  .carte:active { transform:scale(.98); }
+  .num { flex:none; width:46px; height:46px; border-radius:14px; background:var(--rouge); color:#fff; font-weight:800; font-size:22px; display:flex; align-items:center; justify-content:center; }
+  .carte.b .num { background:var(--bleu); }
+  .carte h2 { font-size:18px; line-height:1.2; font-weight:800; }
+  .carte p { font-size:14px; color:var(--gris); margin-top:2px; }
+  .fleche { margin-left:auto; color:var(--rouge); font-size:26px; font-weight:800; }
+  .carte.b .fleche { color:var(--bleu); }
+
+  footer { text-align:center; font-size:12px; color:#fff; background:var(--bleu); padding:14px 16px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="logo" src="logo-fo.png" alt="FO Energie">
+  <h1 class="bienvenue">Bienvenue sur FO Storengy</h1>
+</header>
+
+
+<main>
+    <a class="carte" href="accident-travail.html">
+    <div class="num">1</div>
+    <div>
+      <h2>Accident du travail</h2>
+      <p>2 ans pour le déclarer. Diagnostic et quiz.</p>
+    </div>
+    <span class="fleche">›</span>
+  </a>
+  <a class="carte b" href="risques-psychosociaux.html">
+    <div class="num">2</div>
+    <div>
+      <h2>Risques psychosociaux</h2>
+      <p>Comprendre les RPS et faire son diagnostic.</p>
+    </div>
+    <span class="fleche">›</span>
+  </a>
+</main>
+
+<footer>FO Energie – Storengy SAS</footer>
+<script data-goatcounter="https://fo-storengy-sas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

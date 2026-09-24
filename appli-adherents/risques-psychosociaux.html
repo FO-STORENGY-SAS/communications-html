@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Risques psychosociaux – FO Energie Storengy</title>
+<meta name="theme-color" content="#e73640">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="logo-fo.png">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --rouge:#e73640; --bleu:#15a5b9; --vert:#2aa98c; --orange:#f0a02b; --fond:#f5f7f7; --texte:#1f2a30; --gris:#5f6b72; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Nunito", system-ui, sans-serif; background:var(--fond); color:var(--texte); }
+  h1, h2, h3, .btn, .fact b { font-family:"Baloo 2", "Nunito", sans-serif; }
+  .barre { background:#fff; border-bottom:4px solid var(--bleu); padding:14px 16px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:5; }
+  .barre a { color:var(--bleu); text-decoration:none; font-size:15px; font-weight:700; }
+  .barre img { height:40px; }
+  main { max-width:620px; margin:0 auto; padding:20px 16px 36px; }
+
+  .hero { background:var(--bleu); color:#fff; border-radius:20px; padding:22px 20px; }
+  .hero .tag { display:inline-block; background:rgba(255,255,255,.2); font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; padding:4px 10px; border-radius:999px; }
+  .hero h1 { font-size:26px; line-height:1.15; font-weight:800; margin-top:10px; }
+  .hero p { font-size:15px; margin-top:8px; line-height:1.45; }
+  .aller { display:inline-block; margin-top:14px; background:#fff; color:var(--bleu); font-weight:800; text-decoration:none; padding:10px 16px; border-radius:12px; }
+
+  h2 { font-size:21px; font-weight:800; margin:28px 0 10px; }
+  h2 span { color:var(--rouge); }
+  p.txt { font-size:16px; line-height:1.55; margin-bottom:10px; }
+
+  .formes { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .forme { background:#fff; border-radius:14px; padding:12px 14px; border-top:4px solid var(--rouge); }
+  .forme:nth-child(2) { border-top-color:var(--bleu); }
+  .forme:nth-child(3) { border-top-color:var(--vert); }
+  .forme:nth-child(4) { border-top-color:var(--orange); }
+  .forme h3 { font-size:16px; }
+  .forme p { font-size:13.5px; color:var(--gris); line-height:1.35; margin-top:2px; }
+
+  .facteurs { display:grid; gap:8px; }
+  .facteur { background:#fff; border-radius:12px; padding:12px 14px; display:flex; gap:12px; align-items:flex-start; }
+  .facteur .n { flex:none; width:30px; height:30px; border-radius:9px; background:var(--rouge); color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; font-family:"Baloo 2",sans-serif; }
+  .facteur:nth-child(even) .n { background:var(--bleu); }
+  .facteur h3 { font-size:15.5px; }
+  .facteur p { font-size:13.5px; color:var(--gris); line-height:1.35; }
+
+  .signaux { background:#fff; border-radius:14px; padding:14px 16px; border-left:5px solid var(--orange); }
+  .signaux ul { list-style:none; display:grid; gap:6px; }
+  .signaux li { font-size:14.5px; padding-left:20px; position:relative; line-height:1.4; }
+  .signaux li::before { content:"•"; position:absolute; left:4px; color:var(--orange); font-weight:900; }
+
+  .droit { background:#fff; border-radius:14px; padding:14px 16px; border-left:5px solid var(--vert); margin-bottom:10px; }
+  .droit h3 { font-size:16px; }
+  .droit p { font-size:14.5px; line-height:1.45; color:var(--texte); margin-top:2px; }
+
+  /* Diagnostic */
+  #diag { scroll-margin-top:80px; }
+  .diag-box { background:#fff; border-radius:18px; padding:18px 16px; box-shadow:0 2px 12px rgba(0,0,0,.06); }
+  .diag-box .info { font-size:13.5px; color:var(--gris); line-height:1.4; }
+  .prog { height:8px; background:#e6ecee; border-radius:99px; overflow:hidden; margin:14px 0 6px; }
+  .prog div { height:100%; background:var(--bleu); width:0; transition:width .3s; }
+  .compteur { font-size:13px; color:var(--gris); font-weight:700; }
+  .axe { font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; color:var(--bleu); margin-top:14px; }
+  .question { font-size:18px; font-weight:700; line-height:1.35; margin:6px 0 14px; min-height:74px; }
+  .choix { display:grid; gap:8px; }
+  .choix button { font:700 16px "Nunito",sans-serif; text-align:left; background:var(--fond); border:2px solid transparent; border-radius:12px; padding:13px 14px; color:var(--texte); cursor:pointer; }
+  .choix button:active { border-color:var(--bleu); }
+  .nav { display:flex; justify-content:space-between; margin-top:12px; }
+  .nav button { background:none; border:none; color:var(--gris); font:700 14px "Nunito",sans-serif; cursor:pointer; padding:6px 0; }
+  .btn { display:block; width:100%; text-align:center; border:none; background:var(--rouge); color:#fff; font-size:18px; font-weight:800; padding:14px; border-radius:14px; cursor:pointer; text-decoration:none; margin-top:14px; }
+  .btn.sec { background:var(--fond); color:var(--texte); font-size:16px; }
+
+  .res-global { border-radius:14px; padding:14px 16px; color:#fff; margin-bottom:14px; }
+  .res-global h3 { font-size:20px; }
+  .res-global p { font-size:14.5px; line-height:1.45; margin-top:4px; }
+  .barres { display:grid; gap:10px; }
+  .barre-axe .l { display:flex; justify-content:space-between; font-size:14px; font-weight:700; margin-bottom:4px; }
+  .barre-axe .l span:last-child { font-size:12px; text-transform:uppercase; }
+  .jauge { height:10px; background:#e6ecee; border-radius:99px; overflow:hidden; }
+  .jauge div { height:100%; border-radius:99px; }
+  .conseil-axe { font-size:13.5px; color:var(--gris); margin-top:4px; line-height:1.4; }
+  .suite { margin-top:16px; background:var(--fond); border-radius:12px; padding:12px 14px; font-size:14.5px; line-height:1.5; }
+  .suite b { color:var(--rouge); }
+
+  .aide { background:var(--texte); color:#fff; border-radius:14px; padding:14px 16px; margin-top:24px; font-size:14.5px; line-height:1.5; }
+  .aide b { color:#ffd166; }
+  .refs { font-size:12px; color:var(--gris); margin-top:16px; text-align:center; line-height:1.5; }
+  .slogan { text-align:center; margin-top:18px; font-family:"Baloo 2",sans-serif; font-weight:800; color:var(--rouge); font-size:18px; }
+</style>
+</head>
+<body>
+<div class="barre"><a href="index.html">‹ Accueil</a><img src="logo-fo.png" alt="FO Energie"></div>
+<main>
+  <div class="hero">
+    <span class="tag">Santé au travail</span>
+    <h1>Les risques psychosociaux, <span style="white-space:nowrap">parlons-en</span></h1>
+    <p>Stress, surcharge, tensions, harcèlement… Ce n'est pas « dans la tête » : ce sont des risques professionnels, que l'employeur a l'obligation de prévenir.</p>
+    <a class="aller" href="#diag">Faire mon diagnostic ↓</a>
+  </div>
+
+  <h2>C'est <span>quoi</span> ?</h2>
+  <p class="txt">Les risques psychosociaux (RPS) sont des risques pour la santé mentale, physique et sociale, créés par les conditions d'emploi, l'organisation du travail et les relations de travail.</p>
+  <div class="formes">
+    <div class="forme"><h3>Stress</h3><p>Quand les exigences dépassent durablement les moyens pour y faire face.</p></div>
+    <div class="forme"><h3>Épuisement</h3><p>Le « burn-out » : fatigue profonde, perte de sens, sentiment d'échec.</p></div>
+    <div class="forme"><h3>Violences internes</h3><p>Harcèlement moral ou sexuel, conflits graves entre collègues ou avec la hiérarchie.</p></div>
+    <div class="forme"><h3>Violences externes</h3><p>Insultes, menaces, agressions venant de personnes extérieures.</p></div>
+  </div>
+
+  <h2>Les <span>6 familles</span> de causes</h2>
+  <p class="txt">Les experts regroupent les causes des RPS en six familles. C'est sur elles qu'il faut agir.</p>
+  <div class="facteurs">
+    <div class="facteur"><div class="n">1</div><div><h3>Intensité et temps de travail</h3><p>Surcharge, délais intenables, horaires à rallonge, objectifs flous ou irréalistes.</p></div></div>
+    <div class="facteur"><div class="n">2</div><div><h3>Exigences émotionnelles</h3><p>Devoir cacher ses émotions, faire face à la tension, à la détresse ou à l'agressivité.</p></div></div>
+    <div class="facteur"><div class="n">3</div><div><h3>Manque d'autonomie</h3><p>Peu de marge de manœuvre, pas son mot à dire, compétences non utilisées.</p></div></div>
+    <div class="facteur"><div class="n">4</div><div><h3>Rapports sociaux dégradés</h3><p>Manque de soutien, de reconnaissance, management défaillant, conflits.</p></div></div>
+    <div class="facteur"><div class="n">5</div><div><h3>Conflits de valeurs</h3><p>Devoir faire un travail qu'on juge mal fait, inutile ou contraire à ses valeurs.</p></div></div>
+    <div class="facteur"><div class="n">6</div><div><h3>Insécurité de la situation</h3><p>Peur de perdre son emploi, réorganisations à répétition, avenir flou.</p></div></div>
+  </div>
+
+  <h2>Les <span>signaux</span> d'alerte</h2>
+  <div class="signaux">
+    <ul>
+      <li>Fatigue qui ne passe pas, troubles du sommeil, maux de tête ou de dos.</li>
+      <li>Irritabilité, anxiété, envie de pleurer, repli sur soi.</li>
+      <li>Difficulté à décrocher, le travail envahit les soirées et week-ends.</li>
+      <li>Dans l'équipe : absences en hausse, départs, conflits, erreurs, ambiance tendue.</li>
+    </ul>
+  </div>
+
+  <h2 id="diag">Mon <span>diagnostic</span></h2>
+  <div class="diag-box" id="zone"></div>
+
+  <h2>Ce que dit <span>la loi</span></h2>
+  <div class="droit"><h3>L'employeur doit protéger votre santé mentale</h3><p>Il doit prendre les mesures pour assurer la sécurité et protéger la santé physique et mentale des salariés, et évaluer les RPS dans le document unique (DUERP).</p></div>
+  <div class="droit"><h3>Le harcèlement moral est interdit</h3><p>Aucun salarié ne doit subir des agissements répétés qui dégradent ses conditions de travail et portent atteinte à sa santé ou à sa dignité.</p></div>
+  <div class="droit"><h3>Vous n'êtes pas seul(e)</h3><p>Médecin du travail, élus du CSE et délégués FO Energie peuvent vous écouter, vous conseiller et agir auprès de la direction.</p></div>
+
+  <div class="aide">Vous allez mal ? N'attendez pas : parlez-en à votre médecin traitant ou au médecin du travail. En cas de détresse, le <b>3114</b> répond gratuitement 24 h/24.</div>
+
+  <div class="slogan">Agir, ne pas subir !</div>
+  <p class="refs">Références : Code du travail, art. L4121-1, L4121-2 (prévention), R4121-1 (document unique), L1152-1 (harcèlement moral). Les 6 familles de facteurs : rapport du Collège d'expertise sur le suivi des RPS (2011).</p>
+</main>
+
+<script>
+const AXES = [
+  {nom:"Intensité et temps de travail", conseil:"Notez vos dépassements d'horaires et les demandes urgentes : ce sont des éléments concrets pour agir."},
+  {nom:"Exigences émotionnelles", conseil:"Les situations tendues doivent être signalées et prises en charge par l'employeur, pas encaissées seul(e)."},
+  {nom:"Autonomie", conseil:"Vous pouvez demander à être associé(e) aux décisions qui concernent votre travail."},
+  {nom:"Rapports sociaux", conseil:"Le manque de soutien ou les conflits répétés doivent être remontés : vos délégués peuvent vous accompagner."},
+  {nom:"Conflits de valeurs", conseil:"Parlez des moyens qui manquent pour bien faire votre travail : c'est une question d'organisation."},
+  {nom:"Insécurité", conseil:"Face aux réorganisations, vous avez droit à l'information. Le CSE doit être consulté."}
+];
+const Q = [
+  [0,"J'ai trop de travail pour le temps dont je dispose."],
+  [0,"Je dépasse mes horaires ou je travaille le soir et le week-end pour m'en sortir."],
+  [1,"Je dois cacher mes émotions ou faire semblant d'être de bonne humeur."],
+  [1,"Je suis confronté(e) à des personnes tendues, agressives ou en détresse."],
+  [2,"On m'impose ma façon de travailler sans me demander mon avis."],
+  [2,"Je n'ai pas de marge de manœuvre pour organiser mes tâches."],
+  [3,"Je manque de soutien de ma hiérarchie ou de mes collègues quand j'en ai besoin."],
+  [3,"Mon travail n'est pas reconnu à sa juste valeur."],
+  [4,"Je dois faire des choses que je désapprouve ou que je juge mal faites."],
+  [4,"Je n'ai pas les moyens de faire un travail de qualité."],
+  [5,"Je crains pour mon emploi ou mon poste."],
+  [5,"Les changements dans l'entreprise m'inquiètent et on m'en informe mal."]
+];
+const REP = ["Jamais","Parfois","Souvent","Toujours"];
+let rep = [], i = 0;
+const zone = document.getElementById("zone");
+
+function accueil(){
+  zone.innerHTML = `<p class="info" style="font-size:15px;color:var(--texte)">12 affirmations, 2 minutes. Pour chacune, dites à quelle fréquence vous la vivez. Vous verrez ensuite quelles familles de risques vous concernent le plus.</p>
+  <p class="info" style="margin-top:8px">🔒 Anonyme : vos réponses restent sur votre téléphone, rien n'est enregistré ni envoyé. Résultat indicatif, ce n'est pas un avis médical.</p>
+  <button class="btn" id="go">Commencer</button>`;
+  document.getElementById("go").onclick = () => { rep = []; i = 0; question(); };
+}
+function question(){
+  const [a, t] = Q[i];
+  zone.innerHTML = `<div class="prog"><div style="width:${i/Q.length*100}%"></div></div>
+  <div class="compteur">Question ${i+1} / ${Q.length}</div>
+  <div class="axe">${AXES[a].nom}</div>
+  <div class="question">${t}</div>
+  <div class="choix">${REP.map((r,k)=>`<button data-v="${k}">${r}</button>`).join("")}</div>
+  <div class="nav"><button id="prec" ${i===0?'style="visibility:hidden"':''}>‹ Précédente</button></div>`;
+  zone.querySelectorAll(".choix button").forEach(b => b.onclick = () => {
+    rep[i] = +b.dataset.v; i++;
+    i < Q.length ? question() : resultat();
+  });
+  const p = document.getElementById("prec"); if (p) p.onclick = () => { i--; question(); };
+}
+function niveau(v){ // v sur 6
+  if (v >= 4) return {t:"Élevé", c:"var(--rouge)"};
+  if (v >= 2) return {t:"À surveiller", c:"var(--orange)"};
+  return {t:"Faible", c:"var(--vert)"};
+}
+function resultat(){
+  const scores = AXES.map((_,a) => Q.reduce((s,[ax],k) => ax===a ? s+rep[k] : s, 0));
+  const eleves = scores.filter(s => s>=4).length, moyens = scores.filter(s => s>=2 && s<4).length;
+  let g;
+  if (eleves >= 2) g = {c:"var(--rouge)", h:"Plusieurs signaux forts", p:"Plusieurs familles de risques pèsent sur votre travail. Ne restez pas seul(e) : parlez-en au médecin du travail et à vos délégués FO Energie."};
+  else if (eleves === 1 || moyens >= 2) g = {c:"var(--orange)", h:"Des points de vigilance", p:"Certains aspects de votre travail méritent attention. En parler tôt permet d'agir avant que la situation ne se dégrade."};
+  else g = {c:"var(--vert)", h:"Peu de signaux", p:"Votre situation semble plutôt préservée. Restez attentif(ve) et n'hésitez pas à nous contacter si les choses changent."};
+
+  zone.innerHTML = `<div class="res-global" style="background:${g.c}"><h3>${g.h}</h3><p>${g.p}</p></div>
+  <div class="barres">${scores.map((s,a)=>{const n=niveau(s);return `<div class="barre-axe"><div class="l"><span>${AXES[a].nom}</span><span style="color:${n.c}">${n.t}</span></div><div class="jauge"><div style="width:${Math.max(s/6*100,4)}%;background:${n.c}"></div></div>${s>=2?`<div class="conseil-axe">${AXES[a].conseil}</div>`:""}</div>`}).join("")}</div>
+  <div class="suite"><b>Et maintenant ?</b><br>
+  1. Notez des faits précis (dates, situations, personnes).<br>
+  2. Demandez une visite auprès du médecin du travail : c'est votre droit, à tout moment.<br>
+  3. Contactez vos délégués FO Energie : on peut porter le sujet collectivement, sans vous exposer.</div>
+  <button class="btn sec" id="re">Refaire le diagnostic</button>`;
+  document.getElementById("re").onclick = accueil;
+  document.getElementById("diag").scrollIntoView({behavior:"smooth"});
+}
+accueil();
+</script>
+<script data-goatcounter="https://fo-storengy-sas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

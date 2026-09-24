@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Accident du travail – FO Energie Storengy</title>
+<meta name="theme-color" content="#e73640">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="logo-fo.png">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --rouge:#e73640; --bleu:#15a5b9; --vert:#2aa98c; --fond:#f5f7f7; --texte:#1f2a30; --gris:#5f6b72; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Nunito", system-ui, sans-serif; background:var(--fond); color:var(--texte); }
+  h1, h2, .gros, .btn b, .etape .quand { font-family:"Baloo 2", "Nunito", sans-serif; }
+  .barre { background:#fff; border-bottom:4px solid var(--rouge); padding:14px 16px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:5; }
+  .barre a { color:var(--rouge); text-decoration:none; font-size:15px; font-weight:700; }
+  .barre img { height:40px; }
+  main { max-width:620px; margin:0 auto; padding:20px 16px 36px; }
+
+  .hero { background:var(--rouge); color:#fff; border-radius:20px; padding:20px; display:flex; gap:16px; align-items:center; }
+  .gros { flex:none; width:84px; height:84px; border-radius:18px; background:#fff; color:var(--rouge); display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:800; line-height:.9; font-size:40px; }
+  .gros small { font-size:15px; }
+  .hero h1 { font-size:22px; line-height:1.15; font-weight:800; }
+  .hero p { font-size:14px; margin-top:6px; opacity:.95; }
+
+  .intro { font-size:16px; line-height:1.55; margin:18px 0; }
+
+  .btns { display:flex; flex-direction:column; gap:12px; margin:8px 0 26px; }
+  .btn { display:flex; align-items:center; gap:14px; padding:16px; border-radius:18px; color:#fff; text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.12); transition:transform .15s; }
+  .btn:active { transform:scale(.98); }
+  .btn.diag { background:var(--bleu); }
+  .btn.quiz { background:var(--vert); }
+  .btn .ico { flex:none; width:46px; height:46px; border-radius:14px; background:rgba(255,255,255,.22); display:flex; align-items:center; justify-content:center; }
+  .btn b { display:block; font-size:19px; font-weight:800; line-height:1.1; }
+  .btn span.t { font-size:14px; opacity:.95; }
+  .btn .fl { margin-left:auto; font-size:26px; font-weight:800; }
+
+  h2 { font-size:20px; font-weight:800; margin:6px 0 12px; }
+  h2 span { color:var(--rouge); }
+  .etapes { display:grid; gap:10px; }
+  .etape { background:#fff; border-radius:14px; padding:14px 14px 14px 16px; border-left:5px solid var(--rouge); display:flex; gap:12px; }
+  .etape:nth-child(even) { border-left-color:var(--bleu); }
+  .etape .quand { flex:none; min-width:66px; font-weight:800; font-size:18px; color:var(--rouge); }
+  .etape:nth-child(even) .quand { color:var(--bleu); }
+  .etape h3 { font-size:15px; }
+  .etape p { font-size:14px; color:var(--gris); margin-top:2px; line-height:1.4; }
+
+  .conseils { background:#fff; border-radius:14px; padding:16px; margin-top:22px; border-left:5px solid var(--vert); }
+  .conseils ul { list-style:none; display:grid; gap:8px; margin-top:8px; }
+  .conseils li { font-size:14.5px; line-height:1.4; padding-left:22px; position:relative; }
+  .conseils li::before { content:"✓"; position:absolute; left:0; color:var(--vert); font-weight:800; }
+
+  .tract { display:block; text-align:center; margin-top:22px; border:2px solid var(--rouge); color:var(--rouge); text-decoration:none; font-weight:700; padding:12px; border-radius:14px; }
+  .refs { font-size:12px; color:var(--gris); margin-top:16px; text-align:center; }
+  .slogan { text-align:center; margin-top:18px; font-family:"Baloo 2",sans-serif; font-weight:800; color:var(--rouge); font-size:18px; }
+</style>
+</head>
+<body>
+<div class="barre"><a href="index.html">‹ Accueil</a><img src="logo-fo.png" alt="FO Energie"></div>
+<main>
+  <div class="hero">
+    <div class="gros">2<small>ANS</small></div>
+    <div>
+      <h1>Accident du travail : vous avez 2 ans pour le déclarer</h1>
+      <p>Même si votre employeur ne l'a pas fait, vos droits ne sont pas perdus !</p>
+    </div>
+  </div>
+
+  <p class="intro">Un accident sur le lieu de travail ou pendant le travail, même « bénin », peut avoir des conséquences plus tard. Le faire reconnaître vous protège : arrêt indemnisé, soins pris en charge à 100 %, protection contre le licenciement pendant l'arrêt, rente en cas de séquelles.</p>
+
+  <div class="btns">
+    <a class="btn diag" href="diagnostic-accident-travail.html">
+      <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <div><b>Faire mon diagnostic</b><span class="t">Est-ce un accident du travail ? Que faire ?</span></div>
+      <span class="fl">›</span>
+    </a>
+    <a class="btn quiz" href="quiz-accident-travail.html">
+      <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
+      <div><b>Tester mes connaissances</b><span class="t">Le quiz accident du travail</span></div>
+      <span class="fl">›</span>
+    </a>
+  </div>
+
+  <h2>Les <span>bons réflexes</span></h2>
+  <div class="etapes">
+    <div class="etape"><div class="quand">24 h</div><div><h3>Je préviens mon employeur</h3><p>Informez votre hiérarchie (sauf impossibilité) et demandez la feuille d'accident du travail pour vos soins.</p></div></div>
+    <div class="etape"><div class="quand">48 h</div><div><h3>L'employeur déclare à la CPAM</h3><p>Il doit déclarer dans les 48 h, même s'il a des doutes : il peut émettre des réserves, mais pas refuser de déclarer.</p></div></div>
+    <div class="etape"><div class="quand">Médecin</div><div><h3>Certificat médical initial</h3><p>Faites constater vos lésions et envoyez l'arrêt de travail à la CPAM et à l'employeur sous 48 h.</p></div></div>
+    <div class="etape"><div class="quand">2 ans</div><div><h3>Pas de déclaration ? Je la fais moi-même</h3><p>Vous pouvez déclarer vous-même à la CPAM jusqu'à la fin de la 2<sup>e</sup> année qui suit l'accident.</p></div></div>
+  </div>
+
+  <div class="conseils">
+    <h2 style="margin:0">Nos conseils</h2>
+    <ul>
+      <li>Notez tout : date, heure, lieu, circonstances, noms des témoins.</li>
+      <li>Inscrivez l'accident au registre des accidents bénins si l'établissement en tient un.</li>
+      <li>Gardez une copie de tous vos documents (certificats, arrêts, courriers).</li>
+      <li>Une douleur apparaît ou s'aggrave plus tard ? Consultez et faites le lien avec l'accident.</li>
+      <li>On vous dissuade de déclarer ? Ne restez pas seul(e), contactez FO Energie.</li>
+    </ul>
+  </div>
+
+  <a class="tract" href="tract-accident-travail.pdf" target="_blank" rel="noopener">Télécharger le tract (PDF)</a>
+  <div class="slogan">Agir, ne pas subir !</div>
+  <p class="refs">Références : Code de la sécurité sociale, art. L441-1, L441-2, R441-2 et R441-3.</p>
+</main>
+<script data-goatcounter="https://fo-storengy-sas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
